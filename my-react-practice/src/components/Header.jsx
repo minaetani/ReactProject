@@ -20,8 +20,8 @@ const Header = ({ title, q }) => {
  <header>
   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
   <h1>{title}</h1>
-  <ToggleButton onclick={() => {handleCalcStart(); clickStart();}} text='START' color='turquoise' />
-  <ToggleButton  onclick={() => {handleCalcFinish(); clickFinish()}} text='FINISH' color='pink'/>
+  <ToggleButton onclick={() => {handleCalcFinish(); clickStart();}} text='START' color='turquoise' />
+  <ToggleButton  onclick={() => {handleCalcStart(); clickFinish()}} text='FINISH' color='pink'/>
   <h1>{q}</h1>
 </header>
 )
