@@ -1,31 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import BakeUpForm from './components/BakeUpForm.jsx';
+import Header from './components/Header.jsx';
+import { Form } from './components/Form.jsx';
+import { List } from './components/List.jsx';
+import Timer from './components/Timer.jsx';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Sourdough Baking Timer!
-        </p>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        <BakeUpForm />
-      </header>
-
-      
-    </div>
-  );
+    <div className='App'>
+    <Header title='When Do You Want To' q='Your Bread?'/>
+    <Form />
+    <Timer />
+    <List />
+  </div>
+  )
 }
-
-
 
 export default App;

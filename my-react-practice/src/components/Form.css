@@ -1,0 +1,6 @@
+.formsection {
+  max-width: 66vh;
+  margin: 1px auto;
+  overflow: auto;
+  padding-bottom: 30px;
+}
