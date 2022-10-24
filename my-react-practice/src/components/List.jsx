@@ -1,6 +1,7 @@
 import React from 'react'
 import { BakingData } from './BakingData.js'
 import Timer from './Timer.jsx'
+import ToggleButton from './ToggleButton.jsx'
 
 function ListItem(props) {
   return (
@@ -10,7 +11,8 @@ function ListItem(props) {
     </>
   )
 } 
-export function List ({isStart, isFinish}) {
+export function List ({clicked}) {
+ 
   return (
     <div className='container'>
       <h2>Processes</h2>
@@ -20,8 +22,8 @@ export function List ({isStart, isFinish}) {
         name={BakingData.name}
         purpose={BakingData.purpose} />})
         </li>
-       { isStart ? <Timer isStart={isStart}/> : ''}  
-       { isFinish ? <Timer isFinish={isFinish} /> : ''}  
+       { clicked ? <Timer /> : ''}  
+       { clicked ? <Timer /> : ''}  
        </ol>
     </ div>
   )

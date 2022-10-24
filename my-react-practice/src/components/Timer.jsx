@@ -1,20 +1,19 @@
 import { format } from 'date-fns';
-import { useState } from 'react'
+import ToggleButton from './ToggleButton.jsx'
 
-const Timer = (props) => {
+const Timer = () => {
   const breadReady = () => {
-    format({handleCalcStart}, 'dd-MM-yyyy hh:mm aaaa')
+    format({calcFinish}, 'dd-MM-yyyy hh:mm aaaa')
   }
-
   const youStart = () => {
-    format({handleCalcFinish},'dd-MM-yyyy hh:mm aaaa')
+    format({calcStart},'dd-MM-yyyy hh:mm aaaa')
   }
   return 
   (
-  <>
-    {clickStart ?  <h3>Bread ready to eat at {breadReady}</h3> : ''}
-    {clickFInish ?  <h3>You start your first proces at  {youStart}</h3>  : ''}
-  </>
+    <>
+     <p>{handleClick ?  `Bread ready to eat at ${breadReady}` : ''}</p> 
+     <p>{handleClick ?  `You start your first proces at  ${youStart}` : ''}</p>
+    <>
   )
 }
 

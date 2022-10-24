@@ -1,9 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { add, sub } from 'date-fns';
 import ToggleButton from './ToggleButton.jsx'
+import { Form } from './Form.jsx';
+import { useState } from 'react';
 
-
-// const Header = (props) => {
+//const Header = (props) => {
 //   return (
 //     <header>
 //       <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
@@ -15,21 +16,47 @@ import ToggleButton from './ToggleButton.jsx'
 // }
 
 // or write in destructing
-const Header = ({ title, q }) => {
- return (
+const Header = ({title, Q}) => {
+  const [calcStart, setCalcStart] = useState({initial}); 
+  const handleCalcStart = () => {
+    //Calcurate back from Finish time input
+    setCalcStart(add(
+      {calcStart},
+      { hours: 23,
+        minutes: 50,
+      }
+     ));
+    } 
+
+  const [calcFinish, setCalcFinish] = useState({initial}); 
+  const handleCalcFinish = () => {
+     //Calcurate up Finish time from start time input
+     setCalcFinish(sub(
+        {calcFinish},
+        { hours: 23,
+          minutes: 50,
+        }
+       )
+       );
+    } 
+return (
  <header>
   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
+  <p>Choose your desired date and time, then click START or FINISH button!</p>
+  <Form />
   <h1>{title}</h1>
-  <ToggleButton onclick={() => {handleCalcFinish(); clickStart();}} text='START' color='turquoise' />
-  <ToggleButton  onclick={() => {handleCalcStart(); clickFinish()}} text='FINISH' color='pink'/>
-  <h1>{q}</h1>
-</header>
+  <ToggleButton onclick={handleCalcStart} text='START' color='turquoise' />
+  <ToggleButton  onclick={handleCalcFinish} text='FINISH' color='pink'/>
+  <h1>{Q}</h1>
+  <Timer />
+ </header>
 )
 }
+export default Header
 
 // How to set default value 
 Header.defaultProps = {
-  title: 'Sourdough Baking Planner for Your Busy Life'
+title: 'Sourdough Baking Planner for Your Busy Life'
 }
 
 //Set a certain data types and set it to 'requires' for props to catch errors
@@ -44,5 +71,3 @@ Header.defaultProps = {
 // color: 'red',
 // backgroundColor : 'black',
 // }
-
-export default Header
