@@ -1,6 +1,6 @@
 import React from 'react'
 import { add, sub } from 'date-fns';
-import ToggleButton from './ToggleButton.jsx'
+import ToggleButton from './ToggleButton.jsx';
 import { Form } from './Form.jsx';
 import { useState } from 'react';
 
@@ -16,8 +16,8 @@ import { useState } from 'react';
 // }
 
 // or write in destructing
-const Header = ({title, Q}) => {
-  const [calcStart, setCalcStart] = useState({initial}); 
+const Header = ({title, Q, input}) => {
+  const [calcStart, setCalcStart] = useState({input}); 
   const handleCalcStart = () => {
     //Calcurate back from Finish time input
     setCalcStart(add(
@@ -28,7 +28,7 @@ const Header = ({title, Q}) => {
      ));
     } 
 
-  const [calcFinish, setCalcFinish] = useState({initial}); 
+  const [calcFinish, setCalcFinish] = useState({input}); 
   const handleCalcFinish = () => {
      //Calcurate up Finish time from start time input
      setCalcFinish(sub(
@@ -42,12 +42,11 @@ const Header = ({title, Q}) => {
 return (
  <header>
   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
-  <p>Choose your desired date and time, then click START or FINISH button!</p>
+   <Form />
   <h1>{title}</h1>
-  <ToggleButton onclick={handleCalcStart} text='START' color='turquoise' />
-  <ToggleButton  onclick={handleCalcFinish} text='FINISH' color='pink'/>
+  <ToggleButton onClick={handleCalcStart} text='START' color='turquoise' />
+  <ToggleButton  onClick={handleCalcFinish} text='FINISH' color='pink'/>
   <h1>{Q}</h1>
-  <Form />
  </header>
 )
 }

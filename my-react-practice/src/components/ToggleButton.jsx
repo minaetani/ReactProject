@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const ToggleButton = ({colour, text, handleClick}) => {
+const ToggleButton = ({color, text, onClick}) => {
   const [isClicked, setIsClicked ] = useState(false);
-   const handleClick = () => { 
+   const handleClick = (event) => { 
     setIsClicked (!isClicked);
+    onClick(event);
   }  
     return (
       <>
-        <button type='button' onClick={handleClick} className='btn' style={{ backgroundColor: colour }}>
+        <button type='button' onClick={onClick} className='btn' style={{ backgroundColor: color }}>
           {text}
         </button>
       </>

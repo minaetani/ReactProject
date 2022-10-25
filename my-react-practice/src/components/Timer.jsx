@@ -1,19 +1,17 @@
 import { format } from 'date-fns';
-import ToggleButton from './ToggleButton.jsx'
 
-const Timer = () => {
+const Timer = ({calcFinish, calcStart, isClicked}) => {
   const breadReady = () => {
-    format({calcFinish}, 'dd-MM-yyyy hh:mm aaaa')
+    format({calcFinish}, 'yyyy-dd-MM HH:mm')
   }
   const youStart = () => {
-    format({calcStart},'dd-MM-yyyy hh:mm aaaa')
+    format({calcStart},'yyyy-dd-MM HH:mm')
   }
-  return 
-  (
+  return (
     <>
-     <p>{handleClick ?  `Bread ready to eat at ${breadReady}` : ''}</p> 
-     <p>{handleClick ?  `You start your first proces at  ${youStart}` : ''}</p>
-    <>
+     <p>{isClicked?  `Bread ready to eat at ${breadReady}` : ''}</p> 
+     <p>{isClicked ?  `You start your first proces at  ${youStart}` : ''}</p>
+    </>
   )
 }
 
