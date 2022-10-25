@@ -43,12 +43,11 @@ return (
  <header>
   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
   <p>Choose your desired date and time, then click START or FINISH button!</p>
-  <Form />
   <h1>{title}</h1>
   <ToggleButton onclick={handleCalcStart} text='START' color='turquoise' />
   <ToggleButton  onclick={handleCalcFinish} text='FINISH' color='pink'/>
   <h1>{Q}</h1>
-  <Timer />
+  <Form />
  </header>
 )
 }
