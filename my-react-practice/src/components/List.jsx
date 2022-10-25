@@ -4,25 +4,23 @@ import Timer from './Timer.jsx'
 
 function ListItem(props) {
   return (
-    <>
+    <li>
       <h3>{props.name}</h3>
       <p>{props.purpose}</p>
-    </>
+    </li>
   )
 } 
-export function List ({clicked}) {
- 
+
+export function List ({isClicked}) {    
   return (
     <div className='container'>
       <h2>Processes</h2>
       <ol>
-      <li key={BakingData.id}>
-       {BakingData.map ((item)=>{<ListItem
-        name={BakingData.name}
-        purpose={BakingData.purpose} />})
-        }</li>
-       { clicked ? <Timer /> : ''}  
-       { clicked ? <Timer /> : ''}  
+       {BakingData.map ((item)=><ListItem
+        name={item.name}
+        purpose={item.purpose} />)
+       }
+       { isClicked && <Timer />}
        </ol>
     </ div>
   )

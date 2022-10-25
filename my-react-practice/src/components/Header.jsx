@@ -29,13 +29,14 @@ const Header = ({title, Q, input}) => {
     } 
 
   const [calcFinish, setCalcFinish] = useState({input}); 
-  const handleCalcFinish = () => {
+  const handleCalcFinish = (event) => {
      //Calcurate up Finish time from start time input
      setCalcFinish(sub(
         {calcFinish},
         { hours: 23,
           minutes: 50,
         }
+        //it needs to run button click and judging if isClicked is true or false
        )
        );
     } 
