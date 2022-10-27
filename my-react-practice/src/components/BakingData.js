@@ -1,6 +1,5 @@
-import React from 'react'
 
-export const BakingData = [
+export const BakingData =() => [
 { id: 1,
     name: 'Pre-feed (starter refresh)',
     purpose: 'Feed the starter so that they are powerful enough to make good bread',

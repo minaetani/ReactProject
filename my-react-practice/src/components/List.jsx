@@ -8,7 +8,7 @@ function ListItem(props) {
       <h3>{props.name}</h3>
       <p>{props.purpose}</p>
     </li>
-  )
+  );
 } 
 
 export function List ({isClicked}) {    
@@ -23,7 +23,7 @@ export function List ({isClicked}) {
        { isClicked && <Timer />}
        </ol>
     </ div>
-  )
+  );
 }
 
 

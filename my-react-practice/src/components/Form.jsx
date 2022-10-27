@@ -6,6 +6,7 @@ import { useState } from 'react';
 export function Form (props){
       const [input, setInput] = useState(format(new Date(), 'yyyy-MM-dd HH:mm'));
       const handleInput = (e) => {
+         e.preventDefault()
          setInput(e.target.value);
       }    
   return (

@@ -14,9 +14,9 @@ const ToggleButton = ({color, text, onClick}) => {
           {text}
         </button>
       </>
-    )
+    );
   }
   
 
- export default ToggleButton
+ export default ToggleButton;
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import { add, sub } from 'date-fns';
+import { useState } from 'react';
 import ToggleButton from './ToggleButton.jsx';
 import { Form } from './Form.jsx';
-import { useState } from 'react';
+
 
 //const Header = (props) => {
 //   return (
@@ -16,11 +17,12 @@ import { useState } from 'react';
 // }
 
 // or write in destructing
-const Header = ({title, Q, input}) => {
+const Header = ({title, Q, calcStart, calcFinish}) => {
   const [calcStart, setCalcStart] = useState({input}); 
-  const handleCalcStart = () => {
+  const handleCalcStart = (event) => {
     //Calcurate back from Finish time input
-    setCalcStart(add(
+    //it needs to run button click and judging if isClicked is true or false
+     setCalcStart(add(
       {calcStart},
       { hours: 23,
         minutes: 50,
@@ -31,17 +33,17 @@ const Header = ({title, Q, input}) => {
   const [calcFinish, setCalcFinish] = useState({input}); 
   const handleCalcFinish = (event) => {
      //Calcurate up Finish time from start time input
-     setCalcFinish(sub(
+      //it needs to run button click and judging if isClicked is true or false
+      setCalcFinish(
+      sub(
         {calcFinish},
         { hours: 23,
           minutes: 50,
         }
-        //it needs to run button click and judging if isClicked is true or false
-       )
-       );
+       ));
     } 
 return (
- <header>
+ <header className='App-header'>
   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
    <Form />
   <h1>{title}</h1>
@@ -49,13 +51,13 @@ return (
   <ToggleButton  onClick={handleCalcFinish} text='FINISH' color='pink'/>
   <h1>{Q}</h1>
  </header>
-)
+);
 }
-export default Header
+export default Header;
 
-// How to set default value 
+// How to set default value
 Header.defaultProps = {
-title: 'Sourdough Baking Planner for Your Busy Life'
+title: ''
 }
 
 //Set a certain data types and set it to 'requires' for props to catch errors

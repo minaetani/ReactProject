@@ -9,7 +9,6 @@ function App() {
   const [isClicked, setIsClicked ] = useState(false);
   const handleClick = () => { 
    setIsClicked (!isClicked);
-   console.log('aaa');
  }  
   return (
     <div className='App'>
@@ -21,5 +20,6 @@ function App() {
   </div>
   )
 }
+
 
 export default App;
