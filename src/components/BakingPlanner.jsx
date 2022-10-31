@@ -5,16 +5,15 @@ import  Button  from './Button.jsx';
 import { Form } from './Form.jsx';
 import  Header  from './Header.jsx';
 import  Timer  from './Timer.jsx';
-import { List } from './List.jsx';
 
 
 // or write in destructing
-const BakingPlanner = ({userInput, showCalcStart,showCalcFinish,calcStart,calcFinish,onClick,setCalcStart,setCalcFinish}) => {
+const BakingPlanner = ({userInput,calcStart,calcFinish,setCalcStart,setCalcFinish}) => {
   [calcStart, setCalcStart] = useState(userInput);
   const handleCalcStart = () => {
     //Calcurate back from Finish time input
     setCalcStart(sub(
-    {calcStart},
+    calcStart,
     { hours: 23,
       minutes: 50,
     })
@@ -26,7 +25,7 @@ const BakingPlanner = ({userInput, showCalcStart,showCalcFinish,calcStart,calcFi
     const handleCalcFinish = () => {
        //Calcurate Finish time from start time input
        setCalcFinish(add(
-       {calcFinish},
+       calcFinish,
        { hours: 23,
          minutes: 50,
        } )); 
@@ -39,7 +38,7 @@ return (
   <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
   <h2>Or</h2>
   <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
-  <Form onUserInput={setCalcStart}/>
+  <Form onUserInput={()=>{setCalcStart(); setCalcFinish();}} />
   <Timer showCalcStart={calcStart} showCalcFinish={calcFinish} />
   </>
 );

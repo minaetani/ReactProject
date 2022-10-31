@@ -20,7 +20,7 @@ export function List () {
         name={item.name}
         purpose={item.purpose} />)
        }
-       { onclick && <Timer />}
+       { onClick && <Timer />}
        </ol>
     </ div>
   );
