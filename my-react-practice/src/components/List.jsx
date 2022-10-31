@@ -11,7 +11,8 @@ function ListItem(props) {
   );
 } 
 
-export function List ({isClicked}) {    
+export function List () {    
+  
   return (
     <div className='container'>
       <h2>Processes</h2>

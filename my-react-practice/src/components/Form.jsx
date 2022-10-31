@@ -1,14 +1,16 @@
 import { format } from 'date-fns';
 import React from 'react'
-import './Form.css';
 import { useState } from 'react';
+import './Form.css';
 
-export function Form (props){
+export function Form ({applyInput}){
       const [input, setInput] = useState(format(new Date(), 'yyyy-MM-dd HH:mm'));
       const handleInput = (e) => {
-         e.preventDefault()
-         setInput(e.target.value);
-      }    
+         e.preventDefault();
+         const userInput = (e.target.value);
+         setInput(userInput);
+      }   
+   
   return (
    <>
       <div className='formsection'>

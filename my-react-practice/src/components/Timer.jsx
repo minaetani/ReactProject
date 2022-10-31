@@ -1,18 +1,12 @@
 import { format } from 'date-fns';
-import { useState } from "react";
 
 
 const Timer = () => {
-  const [isClicked, setIsClicked ] = useState(false);
-   const handleClick = () => { 
-    setIsClicked (!isClicked);
-   
-  }  
   const breadReady = () => {
-    format({calcFinish}, 'yyyy-MM-dd HH:mm')
+    format({showCalcFinish}, 'yyyy-MM-dd HH:mm')
   }
   const youStart = () => {
-    format({calcStart},'yyyy-MM-dd HH:mm')
+    format({showCalcStart},'yyyy-MM-dd HH:mm')
   }
   return (
     <>
