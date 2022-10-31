@@ -18,7 +18,7 @@ const BakingPlanner = ({userInput,calcStart,calcFinish,setCalcStart,setCalcFinis
       minutes: 50,
     })
     );
-    // showCalcStart(calcStart);
+   
   }
 
     [calcFinish, setCalcFinish] = useState(userInput);
@@ -29,17 +29,17 @@ const BakingPlanner = ({userInput,calcStart,calcFinish,setCalcStart,setCalcFinis
        { hours: 23,
          minutes: 50,
        } )); 
-      //  showCalcFinish(calcFinish);
+     
   }
 
 return (
   <>
-  <Header title='When Do You Want To'/>
+  <Header title='Welcome To Sourdough Baking Planner! ' Q='When Do You Want To'/>
   <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
   <h2>Or</h2>
   <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
-  <Form onUserInput={()=>{setCalcStart(); setCalcFinish();}} />
-  <Timer showCalcStart={calcStart} showCalcFinish={calcFinish} />
+  <Form onUserInput={userInput} />
+  <Timer calcStart={calcStart} calcFinish={calcFinish} />
   </>
 );
 }

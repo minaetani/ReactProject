@@ -12,7 +12,7 @@ export function Form ({onUserInput}){
   return (
    <>
       <div className='formsection'>
-        <h1>your bread?</h1>
+        <h2>Your Bread?</h2>
          <form method='post'>
             <label>
             Choose your desired date and time, <br />then click START or FINISH button!

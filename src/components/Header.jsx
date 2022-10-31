@@ -1,11 +1,12 @@
 import React from 'react'
 
 
-const Header = ({title}) => {
+const Header = ({title, Q}) => {
 return(
   <header className='App-header'>
-   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
     <h1>{title}</h1>
+   <img className='image' src={require('../sourdough.png')} alt='Delicious Homebaked Sourdough Bread'/>
+    <h2>{Q}</h2>
   </header>
 )
 }

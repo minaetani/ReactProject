@@ -103,6 +103,7 @@ img{
   -webkit-user-select: none;
   -ms-user-select: none;
   pointer-events: none;
+  width: 50%;
 }
 
 /* .bplanet {
