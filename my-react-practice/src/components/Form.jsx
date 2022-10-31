@@ -3,17 +3,16 @@ import React from 'react'
 import { useState } from 'react';
 import './Form.css';
 
-export function Form ({applyInput}){
+export function Form ({onUserInput}){
       const [input, setInput] = useState(format(new Date(), 'yyyy-MM-dd HH:mm'));
       const handleInput = (e) => {
-         e.preventDefault();
-         const userInput = (e.target.value);
-         setInput(userInput);
+         setInput(e.target.value);
+         onUserInput(e.target.value);
       }   
-   
   return (
    <>
       <div className='formsection'>
+        <h1>your bread?</h1>
          <form method='post'>
             <label>
             Choose your desired date and time, <br />then click START or FINISH button!

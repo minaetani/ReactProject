@@ -12,16 +12,15 @@ function ListItem(props) {
 } 
 
 export function List () {    
-  
   return (
     <div className='container'>
       <h2>Processes</h2>
       <ol>
-       {BakingData.map ((item)=><ListItem
+       {BakingData.map ((item) => <ListItem
         name={item.name}
         purpose={item.purpose} />)
        }
-       { isClicked && <Timer />}
+       { onclick && <Timer />}
        </ol>
     </ div>
   );

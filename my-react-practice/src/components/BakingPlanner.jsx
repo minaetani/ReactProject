@@ -1,50 +1,46 @@
 import React from 'react'
 import { add, sub } from 'date-fns';
 import { useState } from 'react';
-import { Form } from './Form.jsx';
 import  Button  from './Button.jsx';
+import { Form } from './Form.jsx';
 import  Header  from './Header.jsx';
+import  Timer  from './Timer.jsx';
 import { List } from './List.jsx';
 
+
 // or write in destructing
-const BakingPlanner = ({isClicked,showCalcStart,showCalcFinish}) => {
-  [calcStart, setCalcStart] = useState({userInput});
+const BakingPlanner = ({userInput, showCalcStart,showCalcFinish,calcStart,calcFinish,onClick,setCalcStart,setCalcFinish}) => {
+  [calcStart, setCalcStart] = useState(userInput);
   const handleCalcStart = () => {
     //Calcurate back from Finish time input
     setCalcStart(sub(
     {calcStart},
     { hours: 23,
       minutes: 50,
-    }
-   ));
-    showCalcStart(calcStart);
+    })
+    );
+    // showCalcStart(calcStart);
   }
 
-    [calcFinish, setCalcFinish] = useState({userInput});
+    [calcFinish, setCalcFinish] = useState(userInput);
     const handleCalcFinish = () => {
        //Calcurate Finish time from start time input
        setCalcFinish(add(
-       {calcFInish},
+       {calcFinish},
        { hours: 23,
          minutes: 50,
        } )); 
-       showCalcFinish(calcFinish);
+      //  showCalcFinish(calcFinish);
   }
-  
-    [clicked, setClicked] = useState(false);
-    const handleClick = () => {
-      setClicked(!clicked);
-      isClicked(clicked);
-      console.log('aaa');
-    }
 
 return (
   <>
   <Header title='When Do You Want To'/>
-  <Form value={userInput} />
   <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
+  <h2>Or</h2>
   <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
-  <List />
+  <Form onUserInput={setCalcStart}/>
+  <Timer showCalcStart={calcStart} showCalcFinish={calcFinish} />
   </>
 );
 }

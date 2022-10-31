@@ -1,17 +1,19 @@
 import { format } from 'date-fns';
 
 
-const Timer = () => {
-  const breadReady = () => {
-    format({showCalcFinish}, 'yyyy-MM-dd HH:mm')
-  }
-  const youStart = () => {
-    format({showCalcStart},'yyyy-MM-dd HH:mm')
-  }
+const Timer = ({showCalcFinish, showCalcStart}) => {
+  console.log(showCalcFinish, showCalcStart);
+
+  const breadReady = 
+    showCalcFinish && format(showCalcFinish, 'yyyy-MM-dd HH:mm');
+
+  const youStart = 
+    showCalcStart && format(showCalcStart,'yyyy-MM-dd HH:mm');
+  
   return (
     <>
-     <p>{isClicked ? `Bread ready to eat at ${breadReady}` : ''}</p> 
-     <p>{isClicked ? `You start your first proces at  ${youStart}` : ''}</p>
+     <p>{ `Bread ready to eat at ${breadReady}`}</p> 
+     <p>{`You start your first proces at  ${youStart}`}</p>
     </>
   );
 }
