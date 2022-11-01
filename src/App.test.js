@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-test('renders shopping cart heading', () => {
+
+test('renders Baking Planner', () => {
   render(<App />);
-  const linkElement = screen.getByText(/bread/i);
+  const linkElement = screen.getByText(/heading/i);
   expect(linkElement).toBeInTheDocument();
 });
