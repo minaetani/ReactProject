@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders baking planner', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Or/i);
+  const linkElement = screen.getByText(/Sourdough/i);
   expect(linkElement).toBeInTheDocument();
 });
