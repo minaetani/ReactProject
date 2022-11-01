@@ -1,10 +1,9 @@
 import React from 'react'
 import { BakingData } from './BakingData.js'
-import Timer from './Timer.jsx'
 
 function ListItem(props) {
   return (
-    <li>
+    <li key={props.id}>
       <h3>{props.name}</h3>
       <p>{props.purpose}</p>
     </li>
@@ -20,7 +19,7 @@ export function List () {
         name={item.name}
         purpose={item.purpose} />)
        }
-       </ol>
+      </ol>
     </ div>
   );
 }

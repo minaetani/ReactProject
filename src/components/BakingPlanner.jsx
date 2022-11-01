@@ -5,6 +5,7 @@ import  Button  from './Button.jsx';
 import { Form } from './Form.jsx';
 import  Header  from './Header.jsx';
 import  Timer  from './Timer.jsx';
+import { List } from './List.jsx';
 
 
 // or write in destructing
@@ -40,6 +41,7 @@ return (
   <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
   <Form onUserInput={userInput} />
   <Timer calcStart={calcStart} calcFinish={calcFinish} />
+  <List />
   </>
 );
 }
