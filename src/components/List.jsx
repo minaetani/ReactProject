@@ -3,10 +3,11 @@ import { BakingData } from './BakingData.js'
 
 function ListItem(props) {
   return (
-    <li>
-      <h3>{props.name}</h3>
-      <p>{props.purpose}</p>
-    </li>
+      BakingData.map(item => 
+      <li key={item.id}> 
+      <h3>{item.name}</h3>
+      <p>{item.purpose}</p>
+      </li>)
   );
 } 
 
@@ -14,11 +15,8 @@ export function List () {
   return (
     <div className='container'>
       <h2>Processes</h2>
-      <ol>
-       {BakingData.map ((item) => <ListItem
-        name={item.name}
-        purpose={item.purpose} />)
-       }
+       <ol>
+        <ListItem />
        </ol>
     </ div>
   );
