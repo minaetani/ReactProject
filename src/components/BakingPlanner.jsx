@@ -1,5 +1,5 @@
 import React from 'react'
-import { add, sub } from 'date-fns';
+import { add, sub, parseISO } from 'date-fns';
 import { useState } from 'react';
 import  Button  from './Button.jsx';
 import { Form } from './Form.jsx';
@@ -14,19 +14,18 @@ const BakingPlanner = ({userInput,calcStart,calcFinish,setCalcStart,setCalcFinis
   const handleCalcStart = () => {
     //Calcurate back from Finish time input
     setCalcStart(sub(
-    calcStart,
+      parseISO(calcStart),
     { hours: 23,
       minutes: 50,
     })
     );
-   
   }
 
     [calcFinish, setCalcFinish] = useState(userInput);
     const handleCalcFinish = () => {
        //Calcurate Finish time from start time input
        setCalcFinish(add(
-       calcFinish,
+        parseISO(calcFinish),
        { hours: 23,
          minutes: 50,
        } )); 

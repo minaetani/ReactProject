@@ -14,7 +14,7 @@ function ListItem(props) {
 export function List () {    
   return (
     <div className='container'>
-      <h2>Processes</h2>
+      <h2>Bread Making Processes</h2>
        <ol>
         <ListItem />
        </ol>

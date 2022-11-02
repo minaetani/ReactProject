@@ -1,14 +1,16 @@
-import { format } from 'date-fns';
+import { parseISO } from 'date-fns';
 import React from 'react'
 import { useState } from 'react';
 import './Form.css';
 
 export function Form ({onUserInput}){
-      const [input, setInput] = useState(format(new Date(), 'yyyy-MM-dd HH:mm'));
+      const [input, setInput] = useState(parseISO(Date.now));
       const handleInput = (e) => {
          setInput(e.target.value);
-         onUserInput(e.target.value);
+         onUserInput(input);
       }   
+
+     
   return (
    <>
       <div className='formsection'>

@@ -1,18 +1,18 @@
-import { format } from 'date-fns';
+import { parseISO } from 'date-fns';
 
 
-const Timer = ({calcFinish, calcStart}) => {
+const Timer = ({calcFinish, calcStart, clicked}) => {
   console.log(calcFinish, calcStart);
-  const breadReady =
-    calcFinish && format({calcFinish}, 'yyyy-MM-dd HH:mm');
+  const breadReady = 
+    calcFinish && parseISO(calcFinish);
 
   const youStart = 
-    calcStart && format(calcStart,'yyyy-MM-dd HH:mm');
+    calcStart && parseISO(calcStart);
   
   return (
     <>
-     <p>{  `Bread is ready to eat at ${breadReady}`}</p> 
-     <p>{  `You start your first proces at  ${youStart}`}</p>
+     <p>{ clicked ? `Bread is ready to eat at ${breadReady}` : ''}</p> 
+     <p>{ clicked ? `You start your first proces at  ${youStart}`: ''}</p>
     </>
   );
 }
