@@ -11,8 +11,8 @@ const Timer = ({calcFinish, calcStart, clicked}) => {
 
   return (
     <>
-     <p>{ breadReady && `Bread is ready at ${breadReady}`}</p> 
-     <p>{ youStart && `You need to start your first process at ${youStart}`}</p>
+     <div className='timer'>{ breadReady && `Bread is ready on ${breadReady}`}</div> 
+     <div  className='timer'>{ youStart && `You need to start your first process on ${youStart}`}</div>
     </>
   );
 }

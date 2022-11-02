@@ -17,8 +17,8 @@ const BakingPlanner = () => {
     console.log(userInput);
     setCalcStart(sub(
     parse(userInput,"yyyy-MM-dd'T'HH:mm", new Date()),
-     { hours: 23,
-      minutes: 50,
+     { hours: 28,
+      minutes: 38,
     })
     );
   }
@@ -28,7 +28,7 @@ const BakingPlanner = () => {
       console.log(userInput);
       setCalcFinish(add(
       parse(userInput,"yyyy-MM-dd'T'HH:mm",new Date()),
-      { hours: 23,
+      { hours: 42,
         minutes: 50,
       } )); 
   }

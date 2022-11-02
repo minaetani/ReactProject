@@ -24,14 +24,24 @@
 }
 
 .formsection {
-  padding: 30px;
   margin: auto;
 }
-
 .input[type="datetime-local"] {
-  padding: 20px;
+  width: 300px;
 }
+.input[type="datetime-local"]::-webkit-datetime-edit {
+   padding: 2em;
+}
+.input[type="datetime-local"]::-webkit-inner-spin-button {
+   display: none; 
+  }
 
+.timer {
+  background-color: rgb(152, 5, 81);
+  color: #ffffff;
+  padding:20px;
+  
+}
 .btn {
   display: inline-block;
   border: none;
