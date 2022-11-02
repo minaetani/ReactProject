@@ -1,33 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-.centered {
-  justify-content: center; /* center items horizontally, in this case */
-  align-items: center;     /* center items vertically, in this case */
-  /* display: flex; */
-}
-
-a{
-  color: white;
-}
-
-* {
+*{
   box-sizing: border-box;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* display: flex; */
+  background: linear-gradient(turquoise, pink); 
+  display:flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 250vh 100vh;
+  text-align: center;
+  margin: auto;
+}
 
-  
+a {
+  font-size: 7px;
+  font-display: auto;
+  color:bisque;
+  text-decoration: none;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media screen and (min-width: 576px) {
+  .App {
+    width: 90%;
+    font-size: 0.8em;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  
+  .App{
+   width: 80%;
+   font-size: 1em;
+ }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  
+  .App{
+    max-width: 70%;
+    font-size: 1.1em;
+   }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  .App{
+    max-width: 70%;
+    font-size: 2em;
+   }
+}
+
+h1,h3,p,label {
+  color: rgb(152, 5, 81);
+}
+
+h2 {
+  color: rgb(241, 165, 204);
+}
+
+
+
+.centered {
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center;     /* center items vertically, in this case */
+  /* display: flex; */
 }
 
 .container {
@@ -41,61 +83,6 @@ body {
   border-radius: 5px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-.btn:hover {
-  outline: none;
-  opacity: 0.65;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-
-h1,h3,p,label {
-  color: rgb(152, 5, 81);
-}
-
-@keyframes particleAnimation
-{
-    from {
-        top: -100px;
-    }
-  
-  50% {
-    transform: translateY(500px);
-  }
-    to {
-        left: calc( 100% + 100px );
-        top: calc( 100% + 100px );
-    }
-}
-
-
 img{
   -webkit-user-drag: none;
   user-select: none;
@@ -104,31 +91,4 @@ img{
   -ms-user-select: none;
   pointer-events: none;
   width: 50%;
-}
-
-/* .bplanet {
-  background-image: url("imgs/IMG_7847.PNG");
-  height: 100px;
-  width: 100px;
-  
-} */
-
-.background-fullviewport{
-  right: -50vh;
-  width: 100vh;
-  padding: 20px;
-  height: 0;
-
-}
-
-h1{
-  padding: 1vh;
-}
-
-@media screen and (max-width: 992px) {
-
-}
-
-#logo{
-  max-height: 100px;
 }

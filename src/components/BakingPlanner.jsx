@@ -8,7 +8,6 @@ import  Timer  from './Timer.jsx';
 import { List } from './List.jsx';
 
 
-// or write in destructing
 const BakingPlanner = () => {
   const [userInput, setUserInput] = useState(format(new Date(),"yyyy-MM-dd'T'HH:mm"));
 
@@ -35,27 +34,19 @@ const BakingPlanner = () => {
   }
 return (
   <>
-  <Header title='Welcome To Sourdough Baking Planner! ' Q='When Do You Want To'/>
-  <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
-  <h2>or</h2>
-  <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
-  <Form onUserInput={setUserInput} />
+  <Header title='Welcome To Sourdough Baking Planner!'/>
+   <Form onUserInput={setUserInput} />
+   <div className='wrapper'>
+     <h2>When do you want to</h2>
+         <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
+          <span>or</span>
+         <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
+      <h2>your bread?</h2>
+     <p>Choose your desired date and time, then click START or FINISH button!</p>
+  </div>
   <Timer calcStart={calcStart} calcFinish={calcFinish} />
   <List />
   </>
 );
 }
 export default BakingPlanner;
-
-//Set a certain data types and set it to 'requires' for props to catch errors
-//Header.propTypes = {
-//  title: propTypes.strings.isRequired,
-//}
-
-// CSS styling in JS file. const properties and drop it within { } to h1 attributes 
-// When doing this inline, give 'style' attribute and provide properties within {{ }}
-// But
-//const headerStyling = {
-// color: 'red',
-// backgroundColor : 'black',
-// }
