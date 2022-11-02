@@ -22,6 +22,8 @@ a {
   font-display: auto;
   color:bisque;
   text-decoration: none;
+  padding: 0;
+  margin:auto;
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -56,27 +58,34 @@ a {
    }
 }
 
-h1,h3,p,label {
+h1,p,ol{
   color: rgb(152, 5, 81);
+  padding: 30, 20px;
+  margin-bottom: 30px;
 }
 
 h2 {
   color: rgb(241, 165, 204);
+  padding-bottom: 20px;
 }
 
-
+p {
+  font-size: 0.7em;
+  padding: 8px 0px;
+}
 
 .centered {
+  display:flex;
+  flex-direction: column;
   justify-content: center; /* center items horizontally, in this case */
   align-items: center;     /* center items vertically, in this case */
   /* display: flex; */
 }
 
 .container {
-  max-width: 80vh;
+  max-width: 80%;
   margin: 1px auto;
   overflow: auto;
-  min-height: 300px;
   text-align: left;
   border: 1px solid steelblue;
   padding: 50px;

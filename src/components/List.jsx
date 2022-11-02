@@ -13,9 +13,9 @@ function ListItem(props) {
 
 export function List () {    
   return (
-    <div className='container'>
+    <div className='centered container'>
       <h2>Bread Making Processes</h2>
-       <ol>
+       <ol className=''>
         <ListItem />
        </ol>
     </ div>
