@@ -1,5 +1,5 @@
 import React from 'react'
-import { add, sub, parseISO } from 'date-fns';
+import { add, sub, format, parse } from 'date-fns';
 import { useState } from 'react';
 import  Button  from './Button.jsx';
 import { Form } from './Form.jsx';
@@ -9,36 +9,37 @@ import { List } from './List.jsx';
 
 
 // or write in destructing
-const BakingPlanner = ({userInput,calcStart,calcFinish,setCalcStart,setCalcFinish}) => {
-  [calcStart, setCalcStart] = useState(userInput);
+const BakingPlanner = () => {
+  const [userInput, setUserInput] = useState(format(new Date(),"yyyy-MM-dd'T'HH:mm"));
+
+  const [calcStart, setCalcStart] = useState();
+  //Calcurate back from userInput of Finish time
   const handleCalcStart = () => {
-    //Calcurate back from Finish time input
+    console.log(userInput);
     setCalcStart(sub(
-      parseISO(calcStart),
-    { hours: 23,
+    parse(userInput,"yyyy-MM-dd'T'HH:mm", new Date()),
+     { hours: 23,
       minutes: 50,
     })
     );
   }
-
-    [calcFinish, setCalcFinish] = useState(userInput);
-    const handleCalcFinish = () => {
-       //Calcurate Finish time from start time input
-       setCalcFinish(add(
-        parseISO(calcFinish),
-       { hours: 23,
-         minutes: 50,
-       } )); 
-     
+    const [calcFinish, setCalcFinish] = useState();
+   //Calcurate Finish time from from userInput of Start time
+    const handleCalcFinish = () => {  
+      console.log(userInput);
+      setCalcFinish(add(
+      parse(userInput,"yyyy-MM-dd'T'HH:mm",new Date()),
+      { hours: 23,
+        minutes: 50,
+      } )); 
   }
-
 return (
   <>
   <Header title='Welcome To Sourdough Baking Planner! ' Q='When Do You Want To'/>
   <Button color='turquoise' text='START' onClick={handleCalcFinish}/>
-  <h2>Or</h2>
+  <h2>or</h2>
   <Button color='pink' text='FINISH' onClick={handleCalcStart}/>
-  <Form onUserInput={userInput} />
+  <Form onUserInput={setUserInput} />
   <Timer calcStart={calcStart} calcFinish={calcFinish} />
   <List />
   </>
