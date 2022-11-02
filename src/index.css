@@ -58,7 +58,7 @@ a {
    }
 }
 
-h1,p,ol{
+h1,p,ol,h3{
   color: rgb(152, 5, 81);
   padding: 30, 20px;
   margin-bottom: 30px;
@@ -70,7 +70,6 @@ h2 {
 }
 
 p {
-  font-size: 0.7em;
   padding: 8px 0px;
 }
 
@@ -83,12 +82,12 @@ p {
 }
 
 .container {
-  max-width: 80%;
+  max-width: 90%;
   margin: 1px auto;
   overflow: auto;
   text-align: left;
   border: 1px solid steelblue;
-  padding: 50px;
+  padding: 15%;
   border-radius: 5px;
 }
 
