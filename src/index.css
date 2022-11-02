@@ -54,7 +54,7 @@ a {
 @media (min-width: 1200px) {  
   .App{
     max-width: 70%;
-    font-size: 2em;
+    font-size: 1.4em;
    }
 }
 
